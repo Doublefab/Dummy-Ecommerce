@@ -1,0 +1,208 @@
+
+.main-container {
+    display: flex;
+    flex: 1; /* La sezione principale si espande per occupare lo spazio rimanente */
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filter-group select,
+.filter-group input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.filter-group .price-legend {
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    color: #666;
+    margin-top: 0px;
+}
+
+.filter-group .price-legend span {
+    text-align: center;
+}
+
+.filter-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1e537c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-group button:hover {
+    background-color: #5a7182;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* I contenuti si organizzano in colonna */
+}
+
+.searchbar-container {
+    margin-bottom: 20px;
+}
+
+.searchbar-container input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.searchbar-container button {
+    padding: 10px;
+    background-color: #1e537c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.searchbar-container button:hover {
+    background-color: #5a7182;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.product-table th,
+.product-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    width: 25%; /* Imposta larghezza fissa al 25% della larghezza totale della tabella */
+    max-width: 300px; 
+    word-wrap: break-word; /* Permette il wrapping del testo lungo nelle celle */
+}
+
+.product-table th {
+    background-color: #f4f4f4;
+    white-space: nowrap; /* Evita il wrapping del testo nell'intestazione */
+}
+
+.cart-button {
+    background-color: #1e537c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 25px; 
+    height: 25px;
+    font-size: 20px; 
+    cursor: pointer;
+}
+
+.cart-button:hover {
+    background-color: #5a7182;
+}
+
+/*stile delle card*/
+
+.product-cards {
+    display: flex;
+    flex-wrap: wrap; /* Permette alle card di andare su più righe se necessario */
+    gap: 20px; /* Spazio tra le card */
+    justify-content: space-evenly; 
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 20%; /* Larghezza fissa per tutte le card */
+    margin: 20px; 
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #fff;  
+}
+
+.card img {
+    padding-top: 1em;
+    width: 100%; /* L'immagine occupa tutta la larghezza della card */
+    height: 12em; 
+    object-fit:scale-down; 
+
+}
+
+.card-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #1e537c; 
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%; 
+    border-radius: 5px; 
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+  
+/*stile pagination*/
+.pagination {
+    text-align: right;
+    margin-top: 1em;
+    margin-bottom: 20px; 
+}
+
+.pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #1e537c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #5a7182;
+}
+
+
+

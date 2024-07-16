@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaettaMcKing</title>
+    <link rel="shortcut icon" href="../img/SaettaMcKing.png" type="image/x icon">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div>
+                    <img src="../img/SaettaMcKing.png" alt="logo" width="20px" height="20px">
+                    SaettaMcKing
+                </div>
+
+                <div>
+                    <ul class="menu">
+                        <li><a href="../products/index.html">Prodotti</a></li>
+                        <li><a href="../cart/index.html">Carrello</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a  id="open-login" href="../index.html">Accedi</a>
+                    <a  id="open-registration" href="../index.html">Registrati</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main-container">
+            <aside class="sidebar">
+                <h2>Filtri</h2>
+                <form>
+                    <div class="filter-group">
+                        <label for="category">Categoria:</label>
+                        <select id="category" name="category">
+                            <option value="all">Tutte</option>
+                            <option value="ram">RAM</option>
+                            <option value="cpu">CPU</option>
+                            <option value="gpu">GPU</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="price">Prezzo:</label>
+                        <input type="range" id="price" name="price" min="0" max="1000" step="10">
+                        <div class="price-legend">
+                            <span>0</span>
+
+                            <span>1000+</span>
+                        </div>
+                    </div>
+                    <button type="submit">Applica Filtri</button>
+                </form>
+            </aside>
+            <section class="content">
+                <div class="searchbar-container">
+                    <input type="text" placeholder="Cerca prodotti...">
+                    <button type="button">Cerca</button>
+                </div>
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Prezzo</th>
+                            <th>Pezzi disponibili</th>
+                            <th>Aggiungi al Carrello</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RAM 8GB</td>
+                            <td>RAM</td>
+                            <td>50€</td>
+                            <td>20</td>
+                            <td style="text-align: center;"><button class="cart-button">+</button></td>
+                        </tr>
+                        <tr>
+                            <td>CPU Intel i5</td>
+                            <td>CPU</td>
+                            <td>200€</td>
+                            <td>15</td>
+                            <td style="text-align: center;"><button class="cart-button">+</button></td>
+                        </tr>
+                        <tr>
+                            <td>GPU NVIDIA GTX 1660</td>
+                            <td>GPU</td>
+                            <td>300€</td>
+                            <td>10</td>
+                            <td style="text-align: center;"><button class="cart-button">+</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="product-cards">
+                    <div class="card">
+                        <img src="../img/RAM.jpg" alt="RAM 8GB">
+                        <div class="card-content">
+                            <h1>RAM 8GB</h1>
+                            <p class="price">49,99€</p>
+                            <p>Aumenta la velocità del tuo pc con questa fantastica scheda RAM...</p>
+                            <p><button >Add Cart</button></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../img/cpui5.jpg" alt="CPU Intel i5">
+                        <div class="card-content">
+                            <h1>CPU Intel i5</h1>
+                            <p class="price">200,00€</p>
+                            <p>Potenzia le performance del tuo pc con questa CPU di ultima generazione...</p>
+                            <p><button>Add Cart</button></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../img/GPUGTX1660.jpg" alt="GPU NVIDIA GTX 1660">
+                        <div class="card-content">
+                            <h1>GPU NVIDIA GTX 1660</h1>
+                            <p class="price">300,00€</p>
+                            <p>Eleva la tua esperienza di gioco con questa potente GPU...</p>
+                            <p><button>Add Cart</button></p>
+                        </div>  
+                    </div>
+                    <div class="card">
+                        <img src="../img/RAM.jpg" alt="RAM 8GB">
+                        <div class="card-content">
+                            <h1>RAM 8GB</h1>
+                            <p class="price">49,99€</p>
+                            <p>Aumenta la velocità del tuo pc con questa fantastica scheda RAM...</p>
+                            <p><button >Add Cart</button></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../img/cpui5.jpg" alt="CPU Intel i5">
+                        <div class="card-content">
+                            <h1>CPU Intel i5</h1>
+                            <p class="price">200,00€</p>
+                            <p>Potenzia le performance del tuo pc con questa CPU di ultima generazione...</p>
+                            <p><button>Add Cart</button></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="../img/GPUGTX1660.jpg" alt="GPU NVIDIA GTX 1660">
+                        <div class="card-content">
+                            <h1>GPU NVIDIA GTX 1660</h1>
+                            <p class="price">300,00€</p>
+                            <p>Eleva la tua esperienza di gioco con questa potente GPU...</p>
+                            <p><button>Add Cart</button></p>
+                        </div>  
+                    </div>
+                </div>
+                <div class="pagination">
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">Successivo</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <ul class="info">
+                <li>Indirizzo</li>
+                <li>Contattaci</li>
+                <li>&copy; Copyright</li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="common.js"></script>
+
+</body>
+
+</html>

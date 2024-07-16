@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="shortcut icon" href="img/SaettaMcKing.png" type="image/x icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <nav class="navbar">
+                <div>
+                    <img src="img/SaettaMcKing.png" alt="logo" width="20px" height="20px">
+                    SaettaMcKing
+                </div>
+
+                <div>
+                    <ul class="menu">
+                        <li><a href="products/index.html">Prodotti</a></li>
+                        <li><a href="cart/index.html">Carrello</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a id="open-login" href="index.html">Accedi</a>
+                    <a id="open-registration" href="index.html">Registrati</a>
+                </div>
+            </nav>
+        </header>
+        <main class="main">
+            <div id="modal-login" class="modal-login hidden">
+                <h2>Accedi</h2>
+                <form class="form" action="" method="post">
+                    <div class="input">
+                        <label for="email">Email:</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <br>
+                    <div class="input">
+                        <label for="password">Password:</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <br>
+                    <div class="btn">
+                        <button type="submit">Accedi</button>
+                        <button id="close-login" type="button">Annulla</button>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <div id="modal-registration"  class="modal-registration hidden">
+                <h2>Registrati</h2>
+                <form id="registration-form" method="post" class="form" >
+                    <div class="input">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <br>
+                    <div class="input">
+                        <label for="surname">Cognome:</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+                    <br>
+                    <div class="input">
+                        <label for="email">Email:</label>
+                        <input type="email" id="reg-email" name="email" required>
+                    </div>
+                    <br>
+                    <div class="input">
+                        <label for="birthDate">Data di Nascita:</label>
+                        <input type="date" id="birthDate" name="birthDate" required>
+                    </div>
+                    <br>
+                    <div class="input">
+                        <label for="password">Password:</label>
+                        <input type="password" id="reg-password" name="password" required>
+                    </div>
+                    <br>
+                    <div class="btn">
+                        <button type="submit">Registrati</button>
+                        <button id="close-registration" type="button">Annulla</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer class="footer">
+            <ul class="info">
+                <li>Indirizzo</li>
+                <li>Contattaci</li>
+                <li>&copy; Copyright</li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="common.js"></script>
+    <script src="./index.js"></script>
+
+
+</body>
+
+</html>
