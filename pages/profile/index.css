@@ -1,0 +1,235 @@
+/* Stili per il main e il form-container */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff; /* Sfondo bianco */
+}
+
+.form-container {
+    width: 100%;
+    /*max-width: 600px;*/
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Aggiunto margine inferiore */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h2 {
+    margin: 0;
+}
+
+.form label {
+    margin-bottom: 5px;
+}
+
+.form input {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form input[readonly] {
+    background-color: #f5f5f5; /* Colore di sfondo per input in sola lettura */
+}
+
+.form #modify-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1e537c;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.form #modify-button:hover {
+    background-color: #5a7182;
+}
+
+/* Stili per la sezione prodotti */
+.product-section {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-header h2 {
+    margin: 0;
+}
+
+.product-header #add-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1e537c;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product-header #add-button:hover {
+    background-color: #5a7182;
+}
+
+/* Stili per la tabella dei prodotti */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.product-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.status-indicator.green {
+    background-color: green;
+}
+
+.status-indicator.red {
+    background-color: red;
+}
+
+/* Stili per la modale */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Stili per il form all'interno della modale */
+
+
+.footer {
+    background-color: #1e537c;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 30px;
+}
+
+.info {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer .info li {
+    margin: 0 15px;
+}
+
+#add-product-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-product-form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+#add-product-form input,
+#add-product-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#add-product-form input:focus,
+#add-product-form select:focus {
+    outline: none;
+    border-color: #1e537c;
+    box-shadow: 0 0 5px rgba(30, 83, 124, 0.5);
+}
+
+#add-product-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1e537c;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+#add-product-form button:hover {
+    background-color: #5a7182;
+}
+
+/* Stile specifico per il campo Categoria */
+#add-product-form #productCategory {
+    width: calc(100% + 2px); /* Larghezza per allineare con gli altri campi */
+}
