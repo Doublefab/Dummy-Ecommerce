@@ -4,37 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca</title>
+    <title>RAMbought</title>
     <link rel="shortcut icon" href="img/SaettaMcKing.png" type="image/x icon">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="common/common.css">
 </head>
 
 <body>
-    <div class="wrapper">
+    
         <header>
             <nav class="navbar">
                 <div>
                     <img src="img/SaettaMcKing.png" alt="logo" width="20px" height="20px">
-                    SaettaMcKing
+                    RAMbought
                 </div>
 
                 <div>
                     <ul class="menu">
-                        <li><a href="products/index.html">Prodotti</a></li>
-                        <li><a href="cart/index.html">Carrello</a></li>
+                        <li><a href="pages/products/index.html">Prodotti</a></li>
+                        <li><a href="pages/cart/index.html">Carrello</a></li>
                     </ul>
                 </div>
                 <div>
-                    <a id="open-login" href="index.html">Accedi</a>
-                    <a id="open-registration" href="index.html">Registrati</a>
+                    <a id="open-login" href="index.html">Login</a>
+                    <a id="open-registration" href="index.html">SignUp</a>
                 </div>
             </nav>
         </header>
+        <div id="modalBackdrop" class="backdrop hidden"></div>
         <main class="main">
+            <section class="highlighted-products">
+                <h2 style="padding-top: 1rem;">PRODOTTI IN EVIDENZA</h2>
+                <div class="product-cards">
+                    <div class="card">
+                        <img src="img/LenovoPc.jpg" alt="Lenovo">
+                        <div class="card-content">
+                            <h1>Lenovo </h1>
+                            <p class="price">1999,99€</p>
+                            <p>Presto sul mercato il nuovo Lenovo con schermo trasparente...</p>
+                            <p><button>Add Cart</button></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <div id="modal-login" class="modal-login hidden">
-                <h2>Accedi</h2>
-                <form class="form" action="" method="post">
+                
+                <form  id="login-form" class="form" action="" method="post">
+                    <h2>Login</h2>
                     <div class="input">
                         <label for="email">Email:</label>
                         <input type="email" id="login-email" name="email" required>
@@ -46,15 +62,16 @@
                     </div>
                     <br>
                     <div class="btn">
-                        <button type="submit">Accedi</button>
+                        <button type="submit">Login</button>
                         <button id="close-login" type="button">Annulla</button>
                     </div>
                 </form>
             </div>
             <br>
             <div id="modal-registration"  class="modal-registration hidden">
-                <h2>Registrati</h2>
+                
                 <form id="registration-form" method="post" class="form" >
+                    <h2>SignUp</h2>
                     <div class="input">
                         <label for="name">Nome:</label>
                         <input type="text" id="name" name="name" required>
@@ -81,11 +98,12 @@
                     </div>
                     <br>
                     <div class="btn">
-                        <button type="submit">Registrati</button>
+                        <button type="submit">SignUp</button>
                         <button id="close-registration" type="button">Annulla</button>
                     </div>
                 </form>
             </div>
+            <div id="message-box" class=" message-box hidden">Registrazione avvenuta con successo</div>
         </main>
         <footer class="footer">
             <ul class="info">
@@ -94,11 +112,11 @@
                 <li>&copy; Copyright</li>
             </ul>
         </footer>
-    </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="common.js"></script>
-    <script src="./index.js"></script>
+    <script src="common/common.js"></script>
+    <script src="index.js"></script>
 
 
 </body>

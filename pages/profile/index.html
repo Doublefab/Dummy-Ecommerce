@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMbought</title>
+    <link rel="shortcut icon" href="../../img/SaettaMcKing.png" type="image/x icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../../common/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div>
+                <img src="../../img/SaettaMcKing.png" alt="logo" width="20px" height="20px">
+                RAMbought
+            </div>
+            <div>
+                <ul class="menu">
+                    <li><a href="products/index.html">Prodotti</a></li>
+                    <li><a href="cart/index.html">Carrello</a></li>
+                </ul>
+            </div>
+            <div>
+                <a id="open-login" href="index.html">Logout</a>
+                <a id="open-registration" href="index.html">Profilo</a>
+            </div>
+        </nav>
+    </header>
+    <div id="modalBackdrop" class="backdrop hidden"></div>
+    <main class="main">
+        <div class="form-container">
+            <form id="account-form" class="form">
+                <div class="form-header">
+                    <h2>Account Information</h2>
+                    <button id="modify-button" type="button"><i class="fas fa-pen"></i></button>
+                </div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="Fab" readonly required>
+
+                <label for="surname">Surname:</label>
+                <input type="text" id="surname" name="surname" value="Mas" readonly required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="fab@mas" readonly required>
+
+                <label for="birthDate">Date of Birth:</label>
+                <input type="date" id="birthDate" name="birthDate" value="2004-04-04" readonly required>
+            </form>
+        </div>
+
+        <div class="product-section">
+            <div class="product-header">
+                <h2>My Products</h2>
+                <button id="add-button" type="button">Add</button>
+            </div>
+            <table class="product-table hidden" id="product-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Prezzo</th>
+                        <th>Pezzi disponibili</th>
+                        <th>Descrizione</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="product-table-body">
+                    <!-- Rows will be added dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <ul class="info">
+            <li>Indirizzo</li>
+            <li>Contattaci</li>
+            <li>&copy; Copyright</li>
+        </ul>
+    </footer>
+
+    <!-- Modale per aggiungere un nuovo prodotto -->
+    <div id="addProductModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Aggiungi un nuovo prodotto</h2>
+            <form id="add-product-form">
+                <label for="productName">Nome:</label>
+                <input type="text" id="productName" name="name" required>
+                
+                <label for="productCategory">Categoria:</label>
+                <select id="productCategory" name="category" required></select>
+                
+                <label for="productDescription">Descrizione:</label>
+                <input type="text" id="productDescription" name="description" required>
+                
+                <label for="productQuantity">Pezzi disponibili:</label>
+                <input type="number" id="productQuantity" name="qty_stock" required>
+                
+                <label for="productPrice">Prezzo:</label>
+                <input type="number" id="productPrice" name="price" required>
+                
+                <label for="productStatus">Status:</label>
+                <select id="productStatus" name="status" required>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+                
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../common/common.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
