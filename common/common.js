@@ -1,117 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Event listeners for login modal
-  const openLoginBtn = document.getElementById("open-login");
-  const closeLoginBtn = document.getElementById("close-login");
-  const loginModalId = "modal-login";
-
-  // Event listeners for registration modal
-  const openRegistrationBtn = document.getElementById("open-registration");
-  const closeRegistrationBtn = document.getElementById("close-registration");
-  const registrationModalId = "modal-registration";
-
-  const backdrop = document.getElementById("modalBackdrop");
-
-  // Function to open modal
-  function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.classList.remove("hidden");
+    // Seleziona gli elementi per le modali e il backdrop
+    const backdrop = document.getElementById("modalBackdrop");
+    
+    const openLoginBtns = document.querySelectorAll("#open-login");
+    const closeLoginBtn = document.getElementById("close-login");
+    
+    const openRegistrationBtns = document.querySelectorAll("#open-registration");
+    const closeRegistrationBtn = document.getElementById("close-registration");
+  
+    // Funzione per aprire una modale
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove("hidden");
+        backdrop.classList.remove("hidden");
+      } else {
+        console.error(`Elemento con ID ${modalId} non trovato.`);
+      }
     }
-  }
-
-  // Function to close modal
-  function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      modal.classList.add("hidden");
+  
+    // Funzione per chiudere una modale
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add("hidden");
+      } else {
+        console.error(`Elemento con ID ${modalId} non trovato.`);
+      }
+      backdrop.classList.add("hidden");
     }
-    backdrop.classList.add("hidden");
-  }
-
-  if (openLoginBtn && closeLoginBtn) {
-    openLoginBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      openModal(loginModalId);
-      closeModal(registrationModalId);
-      backdrop.classList.remove("hidden"); // Close registration modal if open
+  
+    // Aggiungi event listeners ai pulsanti di apertura delle modali
+    openLoginBtns.forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal("modal-login");
+        closeModal("modal-registration");
+      });
     });
-    closeLoginBtn.addEventListener("click", () => closeModal(loginModalId));
-  }
-
-  if (openRegistrationBtn && closeRegistrationBtn) {
-    openRegistrationBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      openModal(registrationModalId);
-      closeModal(loginModalId);
-      backdrop.classList.remove("hidden"); 
+  
+    openRegistrationBtns.forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal("modal-registration");
+        closeModal("modal-login");
+      });
     });
-    closeRegistrationBtn.addEventListener("click", () =>
-      closeModal(registrationModalId)
-    );
-  }
-
-  // Close modal when clicking outside of it
-  backdrop.addEventListener("click", () => {
-    closeModal(loginModalId);
-    closeModal(registrationModalId);
+  
+    // Aggiungi event listeners ai pulsanti di chiusura delle modali
+    if (closeLoginBtn) {
+      closeLoginBtn.addEventListener("click", () => closeModal("modal-login"));
+    }
+  
+    if (closeRegistrationBtn) {
+      closeRegistrationBtn.addEventListener("click", () => closeModal("modal-registration"));
+    }
+  
+    // Chiudi modale quando si clicca sul backdrop
+    backdrop.addEventListener("click", () => {
+      closeModal("modal-login");
+      closeModal("modal-registration");
+    });
   });
-});
-
-// const openLoginBtn = document.getElementById("open-login");
-// const openRegistrationBtn = document.getElementById("open-registration");
-// const modalLogin = document.getElementById("modal-login");
-// const modalRegistration = document.getElementById("modal-registration");
-// const closeLoginBtn = document.getElementById("close-login");
-// const closeRegistrationBtn = document.getElementById("close-registration");
-// const backdrop = document.getElementById('modalBackdrop');
-
-// openLoginBtn.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   openLogin();
-//   closeRegistration();
-// });
-
-// openRegistrationBtn.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   openRegistration();
-//   closeLogin();
-// });
-
-// closeLoginBtn.addEventListener("click", confirmCloseLogin);
-// closeRegistrationBtn.addEventListener("click", confirmCloseRegistration);
-
-// // function openLogin() {
-// //   modalLogin.classList.remove("hidden");
-// //   backdrop.style.display = 'block';
-// // }
-
-// // function openRegistration() {
-// //   modalRegistration.classList.remove("hidden");
-// // }
-
-// // function closeLogin() {
-// //   modalLogin.classList.add("hidden");
-// // }
-// // function closeRegistration() {
-// //   modalRegistration.classList.add("hidden");
-// // }
-
-// // function confirmCloseLogin() {
-// //     if (confirm("Sicuro di voler uscire?")) {
-// //         closeLogin();
-// //     }
-// // }
-// // function confirmCloseRegistration() {
-// //     if (confirm("Sicuro di voler uscire?")) {
-// //         closeRegistration();
-// //     }
-// // }
-
-// function openModal(modalId){
-//   const modal = document.getElementById(modalId);
-//   modal.classList.add("hidden");
-// }
-// function closeModal(modalId){
-//   const modal = document.getElementById(modalId);
-//   modal.classList.remove("hidden");
-// }
+  
