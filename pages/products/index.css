@@ -5,7 +5,8 @@
 }
 
 .sidebar {
-    width: 25%;
+    min-height: 100%;
+    padding-bottom: 0;
     background-color: #f4f4f4;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -55,6 +56,7 @@
 .filter-group button:hover {
     background-color: #5a7182;
 }
+
 
 .content {
     flex-grow: 1;

@@ -16,17 +16,17 @@
         <nav class="navbar">
             <div>
                 <img src="../../img/SaettaMcKing.png" alt="logo" width="20px" height="20px">
-                RAMbought
+                <a href="../../index.html">RAMbought</a> 
             </div>
             <div>
                 <ul class="menu">
-                    <li><a href="products/index.html">Prodotti</a></li>
-                    <li><a href="cart/index.html">Carrello</a></li>
+                    <li><a href="products/index.html">Products</a></li>
+                    <li><a href="cart/index.html">Cart</a></li>
                 </ul>
             </div>
             <div>
                 <a id="open-login" href="index.html">Logout</a>
-                <a id="open-registration" href="index.html">Profilo</a>
+                <a id="open-registration" href="index.html">Profile</a>
             </div>
         </nav>
     </header>
@@ -39,16 +39,16 @@
                     <button id="modify-button" type="button"><i class="fas fa-pen"></i></button>
                 </div>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="Fab" readonly required>
+                <input type="text" id="name" name="name" readonly required>
 
                 <label for="surname">Surname:</label>
-                <input type="text" id="surname" name="surname" value="Mas" readonly required>
+                <input type="text" id="surname" name="surname" readonly required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="fab@mas" readonly required>
+                <input type="email" id="email" name="email" readonly required>
 
                 <label for="birthDate">Date of Birth:</label>
-                <input type="date" id="birthDate" name="birthDate" value="2004-04-04" readonly required>
+                <input type="date" id="birthDate" name="birthDate" readonly required>
             </form>
         </div>
 
@@ -57,14 +57,14 @@
                 <h2>My Products</h2>
                 <button id="add-button" type="button">Add</button>
             </div>
-            <table class="product-table hidden" id="product-table">
+            <table class="product-table" id="product-table">
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Categoria</th>
-                        <th>Prezzo</th>
-                        <th>Pezzi disponibili</th>
-                        <th>Descrizione</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock Quantity</th>
+                        <th>Description</th>
                         <th>Status</th>
                     </tr>
                 </thead>

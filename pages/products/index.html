@@ -9,31 +9,20 @@
     <link rel="stylesheet" href="../../common/common.css">
     <link rel="stylesheet" href="../../index.css">
     <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../index.js"  type="text/javascript" defer></script>
+    <script src="../../components/header.js" type="text/javascript" defer></script>
+    <script src="../../components/footer.js" type="text/javascript" defer></script>
+    <script src="../../components/sidebar.js" type="text/javascript" defer></script>
+    <script src="../../components/modalLogin.js" type="text/javascript" defer></script>
+    <script src="../../components/modalRegistration.js" type="text/javascript" defer></script>
 </head>
 
 <body>
-        <header>
-            <nav class="navbar">
-                <div>
-                    <img src="../../img/SaettaMcKing.png" alt="logo" width="20px" height="20px">
-                    RAMbought
-                </div>
-
-                <div>
-                    <ul class="menu">
-                        <li><a href="index.html">Prodotti</a></li>
-                        <li><a href="../cart/index.html">Carrello</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <a  id="open-login" href="../../index.html">Login</a>
-                    <a  id="open-registration" href="../../index.html">SignUp</a>
-                </div>
-            </nav>
-        </header>
-
+        <header-component></header-component>
+        <div id="modalBackdrop" class="backdrop hidden"></div>
         <main class="main-container">
-            <aside class="sidebar">
+            <!-- <aside class="sidebar">
                 <h2>Filtri</h2>
                 <form>
                     <div class="filter-group">
@@ -56,46 +45,13 @@
                     </div>
                     <button type="submit">Applica Filtri</button>
                 </form>
-            </aside>
+            </aside>  -->
+            <sidebar-component></sidebar-component>
             <section class="content">
                 <div class="searchbar-container">
                     <input type="text" placeholder="Cerca prodotti...">
                     <button type="button">Cerca</button>
                 </div>
-                <!-- <table class="product-table">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Categoria</th>
-                            <th>Prezzo</th>
-                            <th>Pezzi disponibili</th>
-                            <th>Aggiungi al Carrello</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>RAM 8GB</td>
-                            <td>RAM</td>
-                            <td>50€</td>
-                            <td>20</td>
-                            <td style="text-align: center;"><button class="cart-button">+</button></td>
-                        </tr>
-                        <tr>
-                            <td>CPU Intel i5</td>
-                            <td>CPU</td>
-                            <td>200€</td>
-                            <td>15</td>
-                            <td style="text-align: center;"><button class="cart-button">+</button></td>
-                        </tr>
-                        <tr>
-                            <td>GPU NVIDIA GTX 1660</td>
-                            <td>GPU</td>
-                            <td>300€</td>
-                            <td>10</td>
-                            <td style="text-align: center;"><button class="cart-button">+</button></td>
-                        </tr>
-                    </tbody>
-                </table> -->
                 <div class="product-cards">
                     <div class="card">
                         <img src="../../img/RAM.jpg" alt="RAM 8GB">
@@ -159,15 +115,10 @@
                     <button type="button">Successivo</button>
                 </div>
             </section>
+            <modal-login-component></modal-login-component>
+            <modal-registration-component></modal-registration-component>
         </main>
-
-        <footer class="footer">
-            <ul class="info">
-                <li>Indirizzo</li>
-                <li>Contattaci</li>
-                <li>&copy; Copyright</li>
-            </ul>
-        </footer>
+        <footer-component></footer-component>
     <script src="../../common/common.js"></script>
 
 </body>
