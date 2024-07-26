@@ -46,7 +46,7 @@ class modalLogin extends HTMLElement {
                     console.log(response);
                     const authData = response.data;
                     console.log("Dati utente memorizzati:", authData);
-                    localStorage.setItem('authData', JSON.stringify(authData));
+                    sessionStorage.setItem('authData', JSON.stringify(authData));
 
                     window.location.href = "pages/profile/index.html";
                 })
