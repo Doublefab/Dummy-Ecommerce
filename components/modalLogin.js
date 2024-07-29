@@ -10,12 +10,12 @@ class modalLogin extends HTMLElement {
                 <h2>Login</h2>
                 <div class="input">
                     <label for="email">Email:</label>
-                    <input type="email" id="login-email" name="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <br>
                 <div class="input">
                     <label for="password">Password:</label>
-                    <input type="password" id="login-password" name="password" required>
+                    <input type="password" id="password" name="password" required>
                 </div>
                 <br>
                 <div class="btn">
@@ -37,15 +37,14 @@ class modalLogin extends HTMLElement {
                 password: loginPassword.value,
             };
             console.log(payload);
+            UserService.me()
             axios
                 .post(
                     "https://e-commerce-anxious-gnu-sl.cfapps.us10-001.hana.ondemand.com/user/login",
                     payload
                 )
                 .then((response) => {
-                    console.log(response);
                     const authData = response.data;
-                    console.log("Dati utente memorizzati:", authData);
                     sessionStorage.setItem('authData', JSON.stringify(authData));
 
                     window.location.href = "pages/profile/index.html";

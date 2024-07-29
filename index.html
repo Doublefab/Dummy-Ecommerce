@@ -8,42 +8,37 @@
     <link rel="shortcut icon" href="img/SaettaMcKing.png" type="image/x icon">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="common/common.css">
-    <script src="components/header.js" type="text/javascript" defer></script>
-    <script src="components/footer.js" type="text/javascript" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="components/modalLogin.js" type="text/javascript" defer></script>
     <script src="components/modalRegistration.js" type="text/javascript" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="common/common.js"></script>
+    <script src="components/header.js" type="text/javascript" defer></script>
+    <script src="components/footer.js" type="text/javascript" defer></script>
+    <!-- <script src="common/common.js"></script> -->
     <script src="index.js"></script>
+    <!-- <script src="userService.js"></script> -->
 </head>
 
 <body>
-        <header-component></header-component>
-        <div id="modalBackdrop" class="backdrop hidden"></div>
-        <main class="main">
-            <section class="highlighted-products">
-                <h2 style="padding-top: 1rem;">FEATURED PRODUCTS</h2>
-                <div class="product-cards">
-                    <div class="card">
-                        <img src="img/LenovoPc.jpg" alt="Lenovo">
-                        <div class="card-content">
-                            <h1>Lenovo </h1>
-                            <p class="price">1999,99€</p>
-                            <p>Presto sul mercato il nuovo Lenovo con schermo trasparente...</p>
-                            <p><button>Add Cart</button></p>
-                        </div>
+    <header-component></header-component>
+    <div id="backdrop" class="backdrop hidden"></div>
+    <main class="main">
+        <section class="highlighted-products">
+            <h2 style="padding-top: 1rem;">FEATURED PRODUCTS</h2>
+            <div class="product-cards">
+                <div class="card">
+                    <img src="img/LenovoPc.jpg" alt="Lenovo">
+                    <div class="card-content">
+                        <h1>Lenovo </h1>
+                        <p class="price">1999,99€</p>
+                        <p>Presto sul mercato il nuovo Lenovo con schermo trasparente...</p>
+                        <p><button>Add Cart</button></p>
                     </div>
                 </div>
-            </section>
-             <modal-login-component></modal-login-component>
-            <br>
-            <modal-registration-component></modal-registration-component>
-            <div id="message-box" class=" message-box hidden">Succesfully Signed Up!</div>
-        </main>
-       <footer-component></footer-component> 
-    
-    
-
+            </div>
+        </section>
+        <div id="message-box" class=" message-box hidden">Succesfully Signed Up!</div>
+    </main>
+    <footer-component></footer-component>
 
 </body>
 

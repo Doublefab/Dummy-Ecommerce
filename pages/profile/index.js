@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  UserService.getTest();
   const modifyButton = document.getElementById("modify-button");
   const accountForm = document.getElementById("account-form");
   const inputs = accountForm.querySelectorAll("input");
@@ -9,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeButton = addProductModal.querySelector(".close-button");
   const addProductForm = document.getElementById("add-product-form");
   const productTable = document.getElementById("product-table");
-  const productTableBody = document.getElementById("product-table-body");
   const productCategory = document.getElementById("productCategory");
   const productImageInput = document.getElementById("productImage");
   const basePath =
@@ -197,70 +197,19 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Funzione per popolare la tabella dei prodotti
-  const populateTable = async () => {
-    try {
-      const headers = {
-        Authorization: `Bearer ${
-          JSON.parse(sessionStorage.getItem("authData")).token
-        }`,
-      };
-      const response = await axios.get(
-        `${basePath}products?page=1&limit=10&order=ASC`,
-        { headers }
-      );
-      const products = response.data.products;
-      console.log(products);
-      if (Array.isArray(products) && products.length > 0) {
-        productTableBody.innerHTML = products
-          .map((product) => {
-            return `
-                      <tr>
-                          ${getProductRow(product)}
-                      </tr>
-                  `;
-          })
-          .join("");
 
-        // Aggiungi eventi di click per le righe della tabella
-        productTableBody.querySelectorAll("tr").forEach((row, index) => {
-          row.addEventListener("click", () => {
-            openProductDetails(products[index]);
-            console.log(products.index);
-          });
-        });
-      } else {
-        productTableBody.innerHTML =
-          '<tr><td colspan="6">No products found.</td></tr>';
-      }
-    } catch (error) {
-      console.error("Errore nel caricamento dei prodotti:", error);
-    }
-  };
-
-   // Gestisci l'aggiornamento e la cancellazione dei prodotti tramite eventi
-   document.addEventListener('product-updated', () => {
+  // Gestisci l'aggiornamento e la cancellazione dei prodotti tramite eventi
+  document.addEventListener("product-updated", () => {
     populateTable();
     console.log("Product updated event detected, table updated.");
-});
+  });
 
-document.addEventListener('product-deleted', () => {
+  document.addEventListener("product-deleted", () => {
     populateTable();
     console.log("Product deleted event detected, table updated.");
-});
+  });
 
   populateTable();
 
-  // Funzione per ottenere la riga del prodotto
-  const getProductRow = (product) => {
-    return `
-              <td>${product.name}</td>
-              <td>${product.category.category}</td>
-              <td>${product.price.toFixed(2)}€</td>
-              <td>${product.qty_stock}</td>
-              <td>${product.description}</td>
-              <td><span class="status-indicator ${
-                product.status === "active" ? "green" : "red"
-              }"></span></td>
-          `;
-  };
+ 
 });

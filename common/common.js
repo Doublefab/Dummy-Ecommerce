@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const modal = document.getElementById(modalId);
       if (modal) {
         modal.classList.add("hidden");
+        backdrop.classList.add("hidden");
       } else {
         console.error(`Elemento con ID ${modalId} non trovato.`);
       }

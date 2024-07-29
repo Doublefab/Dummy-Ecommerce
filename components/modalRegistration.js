@@ -1,11 +1,10 @@
 class modalRegistration extends HTMLElement {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    connectedCallback() {
-        this.innerHTML = 
-        `<div id="modal-registration" class="modal-registration hidden">
+  connectedCallback() {
+    this.innerHTML = `<div id="modal-registration" class="hidden">
             <form id="registration-form" method="post" class="form">
                 <h2>SignUp</h2>
                 <div class="input">
@@ -20,17 +19,17 @@ class modalRegistration extends HTMLElement {
                 <br>
                 <div class="input">
                     <label for="email">Email:</label>
-                    <input type="email" id="reg-email" name="email" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <br>
                 <div class="input">
-                    <label for="birthDate">Date of Birth:</label>
-                    <input type="date" id="birthDate" name="birthDate" required>
+                    <label for="dateOfBirth">Date of Birth:</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
                 </div>
                 <br>
                 <div class="input">
                     <label for="password">Password:</label>
-                    <input type="password" id="reg-password" name="password" required>
+                    <input type="password" id="password" name="password" required>
                 </div>
                 <br>
                 <div class="btn">
@@ -40,57 +39,27 @@ class modalRegistration extends HTMLElement {
             </form>
         </div>`;
 
-        // Aggiungi event listener qui
-        const regForm = this.querySelector("#registration-form");
-        const regNameInput = this.querySelector("#name");
-        const regSurnameInput = this.querySelector("#surname");
-        const regEmailInput = this.querySelector("#reg-email");
-        const regPasswordInput = this.querySelector("#reg-password");
-        const regDateOfBirthInput = this.querySelector("#birthDate");
-        const messageBox = document.getElementById("message-box");
-        const loginModal = document.getElementById("modal-login");
-        const regModal = this;
+    // const form = this.querySelector("#registration-form");
+    // const closeButton = this.querySelector("#close-registration");
+    // /**
+    //  * 
+    //  * @param {Event} e 
+    //  */
+    // const register = async function(e){
+    //     e.preventDefault();
+    //     const formData = new FormData(e.target);
+    //     const newUserData = Object.fromEntries(formData);
+    //     await UserService.create(newUserData);
+    // }
 
-        regForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+    // const close = function(){
+    //     this.classList.add("hidden");
+    //     this.getElementById("modalBackdrop").classList.add("hidden");
+    // }
 
-            const payload = {
-                name: regNameInput.value,
-                surname: regSurnameInput.value,
-                email: regEmailInput.value,
-                password: regPasswordInput.value,
-                dateOfBirth: regDateOfBirthInput.value,
-            };
-
-            console.log(payload);
-
-            axios
-                .post(
-                    "https://e-commerce-anxious-gnu-sl.cfapps.us10-001.hana.ondemand.com/user",
-                    payload
-                )
-                .then((response) => {
-                    console.log(response);
-                    messageBox.classList.remove("hidden");
-
-                    setTimeout(() => {
-                        messageBox.style.display = "none";
-                    }, 5000);
-
-                    regModal.classList.add("hidden");
-                    loginModal.classList.remove("hidden");
-                })
-                .catch((error) => {
-                    console.log("Errore:", error);
-                });
-        });
-
-        const closeRegButton = this.querySelector("#close-registration");
-        closeRegButton.addEventListener("click", () => {
-            this.classList.add("hidden");
-            document.getElementById("modalBackdrop").classList.add("hidden");
-        });
-    }
+    // form.addEventListener("submit", register);
+    // closeButton.addEventListener("click", close);
+  }
 }
 
-customElements.define('modal-registration-component', modalRegistration);
+customElements.define("modal-registration-component", modalRegistration);
