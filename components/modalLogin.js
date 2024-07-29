@@ -20,7 +20,7 @@ class modalLogin extends HTMLElement {
                 <br>
                 <div class="btn">
                     <button type="submit">Login</button>
-                    <button id="close-login" type="button">Back</button>
+                    <button id="close-login" onClick=closeModal('modal-login')" type="button">Back</button>
                 </div>
             </form>
         </div>`;

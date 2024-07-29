@@ -94,27 +94,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // Funzione per popolare il form con i dati dell'utente
   const loadUserData = async () => {
     try {
-      const headers = {
-        Authorization: `Bearer ${
-          JSON.parse(sessionStorage.getItem("authData")).token
-        }`,
-      };
-      const response = await axios.get(`${basePath}user/me`, { headers });
-      const userData = response.data;
-      console.log(userData);
+      // const headers = {
+      //   Authorization: `Bearer ${
+      //     JSON.parse(sessionStorage.getItem("authData")).token
+      //   }`,
+      // };
+      // const response = await axios.get(`${basePath}user/me`, { headers });
+      // const userData = response.data;
+      // console.log(userData);
 
-      // Salva i dati dell'utente nel sessionStorage
-      sessionStorage.setItem(
-        "userData",
-        JSON.stringify({
-          id: userData._id,
-          name: userData.name,
-          surname: userData.surname,
-          email: userData.email,
-          dateOfBirth: userData.dateOfBirth,
-        })
-      );
-
+      // // Salva i dati dell'utente nel sessionStorage
+      // sessionStorage.setItem(
+      //   "userData",
+      //   JSON.stringify({
+      //     id: userData._id,
+      //     name: userData.name,
+      //     surname: userData.surname,
+      //     email: userData.email,
+      //     dateOfBirth: userData.dateOfBirth,
+      //   })
+      // );
+      const userMe = UserService.me();
       // Popola il form con i dati dell'utente
       document.getElementById("name").value = userData.name;
       document.getElementById("surname").value = userData.surname;

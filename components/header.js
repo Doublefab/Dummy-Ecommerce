@@ -26,24 +26,11 @@ connectedCallback(){
                     </ul>
                 </div>
                 <div>
-                    <a id="open-login">Login</a>
+                    <a onclick="openModal('open-login')" id="open-login">Login</a>
                     <a id="open-registration">SignUp</a>
                 </div>
             </nav>
         </header>`;
-
-    // const openRegistrationBtp = document.getElementById('open-registration')
-    //     const openLoginModal = ()=>{
-    //         document.getElementById("modal-login").classList.remove("hidden");
-    //         document.getElementById("backdrop").classList.remove("hidden");
-    //     }
-    //     const openRegistrationModal = function(){
-    //         document.getElementById("modal-registration").classList.remove("hidden");
-    //         document.getElementById("backdrop").classList.remove("hidden");
-    //     }
-
-    //     document.getElementById("open-login").addEventListener('click', openLoginModal)
-    //     openRegistrationBtp.addEventListener('click', openRegistrationModal)
     }
     
 };
