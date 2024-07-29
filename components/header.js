@@ -1,15 +1,15 @@
-class Header extends HTMLElement{
-    constructor(){
+class Header extends HTMLElement {
+    constructor() {
         super();
     }
 
 
-connectedCallback(){
-    const imgPath = window.location.pathname.includes('/pages/') ? '../../img/SaettaMcKing.png' : 'img/SaettaMcKing.png';
-    const cartPath = window.location.pathname.includes('/pages/') ? '../cart/index.html' : 'pages/cart/index.html';
-    const homePath = window.location.pathname.includes('/pages/') ? '../../index.html' : 'index.html';
-    this.innerHTML = 
-    `
+    connectedCallback() {
+        const imgPath = window.location.pathname.includes('/pages/') ? '../../img/SaettaMcKing.png' : 'img/SaettaMcKing.png';
+        const cartPath = window.location.pathname.includes('/pages/') ? '../cart/index.html' : 'pages/cart/index.html';
+        const homePath = window.location.pathname.includes('/pages/') ? '../../index.html' : 'index.html';
+        this.innerHTML =
+            `
        <modal-login-component></modal-login-component>
        <modal-registration-component></modal-registration-component>
     <header>
@@ -26,13 +26,13 @@ connectedCallback(){
                     </ul>
                 </div>
                 <div>
-                    <a onclick="openModal('open-login')" id="open-login">Login</a>
+                    <a onclick="openModal('modal-login')" id="open-login">Login</a>
                     <a id="open-registration">SignUp</a>
                 </div>
             </nav>
         </header>`;
     }
-    
+
 };
 
 customElements.define('header-component', Header);

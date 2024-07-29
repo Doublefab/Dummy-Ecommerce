@@ -19,4 +19,11 @@ class UserService {
       console.log("Errore:", error);
     }
   }
+  static async login(userCredentials) {
+    try {
+        //loginca login
+    } catch (error) {
+      console.log("Errore:", error);
+    }
+  }
 }
